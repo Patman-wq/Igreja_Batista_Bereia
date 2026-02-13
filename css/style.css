@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.7;
+}
+
+/* ===== HEADER ===== */
+.topo {
+    background: linear-gradient(135deg, #1f3c88, #162b61);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.logo-area img {
+    width: 55px;
+}
+
+/* ===== MENU ===== */
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffd369;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ===== CONTEÚDO ===== */
+main {
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 30px;
+    animation: fadeIn 0.9s ease;
+}
+
+/* ===== TÍTULOS ===== */
+h1 {
+    text-align: center;
+    color: #1f3c88;
+    margin-bottom: 10px;
+    font-size: 2.6rem;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #ffd369;
+    margin: 15px auto 0;
+}
+
+h2 {
+    text-align: center;
+    margin: 60px 0 30px;
+    font-weight: 600;
+    color: #1f3c88;
+}
+
+/* ===== TEXTO ===== */
+p {
+    text-align: justify;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+/* ===== HORÁRIOS ===== */
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #fff;
+    padding: 28px 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+}
+
+.card h3 {
+    color: #1f3c88;
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* ===== LIDERANÇA ===== */
+.lideranca {
+    margin-bottom: 80px;
+}
+
+.lideranca p {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #555;
+}
+
+/* Grade da liderança */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+}
+
+/* Cards da liderança */
+.cards-grid .card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Nome */
+.cards-grid .card h3 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+}
+
+/* Função */
+.cards-grid .card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* ===== DESTAQUE DO PASTOR ===== */
+.card.pastor {
+    border-top: 5px solid #ffd369;
+    background: linear-gradient(180deg, #ffffff, #f9f9f9);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1f3c88;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    nav a {
+        margin-left: 15px;
+    }
+
+    h1 {
+        font-size: 2.1rem;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+/* ===== MENU MOBILE ===== */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Link ativo */
+nav a.ativo {
+    color: #ffd369;
+}
+
+/* ===== ANIMAÇÕES ===== */
+.card, h1, h2, p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVO MENU ===== */
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #1f3c88;
+        width: 200px;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav.ativo {
+        display: flex;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
